@@ -10,9 +10,8 @@ left, right, and parent pointers.
 
 The RBT class is a generic, templated C++ implementation which uses the sentinel construct for leaf
 references. The rbNode structure which the class is built on contains rbNode pointers to a left, right
-and parent reference, an int value for storing the color type, an unsigned long long key variable
-(which is used for storing into tree) and a templated data field which currently takes a copy of
-the templated data (Eventually may be updated to be a pointer). This is to utilized by other appliations
+and parent reference, a char for storing the color type, an unsigned long long key variable (which is
+used for storing into tree) and a templated data field pointer. This is to utilized by other appliations
 such that the tree can be reused for multiple different use cases.
 
 The RBT_DEMO binary is a simple "game" loop which presents the user the ability to delete or insert nodes

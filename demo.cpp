@@ -44,7 +44,7 @@ int main(int argc, char** argv)
                 break;
             
             // The tree uses the key for its key and data fields. The trees' generics are for the data portion of the node.
-            tree.insert(key, key); //(key, data)
+            tree.insert(key, &key); //(key, data)
             tree.prettyPrint();
         }
         else if (key == 2) // deletion selection

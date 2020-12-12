@@ -61,7 +61,7 @@ int main(int argc, char** argv)
     {
         unsigned long long randomKey = rand() % ULLONG_MAX + 1; // 1 - 18,446,744,073,709,551,615
         bool randomData = rand() % 1; // 0 or 1
-        tree.insert(randomKey, randomData);
+        tree.insert(randomKey, &randomData);
 
         end = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
         elapsed = end - start;

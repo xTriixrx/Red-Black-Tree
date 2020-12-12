@@ -30,8 +30,8 @@ enum rbColor
 template <typename T>
 struct rbNode
 {
-    T data;
-    int rbColor;
+    T* data;
+    char rbColor;
     unsigned long long key;
     rbNode* left, *right, *parent;
 };
@@ -56,7 +56,7 @@ class RBT
         rbNode<T>* getSentinel();
         bool del(unsigned long long key);
         rbNode<T>* search(unsigned long long key);
-        void insert(unsigned long long key, T data);
+        void insert(unsigned long long key, T* data);
         
     private:
         rbNode<T>* root;
@@ -75,7 +75,7 @@ class RBT
         void pdelFixup(rbNode<T>* &root, rbNode<T>* &ptr);
         rbNode<T>* pinsert(rbNode<T>* root, rbNode<T>* ptr);
         void pinsertFixup(rbNode<T>* &root, rbNode<T>* &ptr);
-        rbNode<T>* instantiateNode(unsigned long long key, T data);
+        rbNode<T>* instantiateNode(unsigned long long key, T* data);
         rbNode<T>* psearch(rbNode<T>* root, unsigned long long key);
         void pprint(rbNode<T>* root, std::string indent, bool last);
 };

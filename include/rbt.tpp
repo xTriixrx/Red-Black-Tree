@@ -26,7 +26,7 @@ RBT<T>::RBT()
     root = sentinel;
     
     sentinel->key = -1;
-    sentinel->data = -1;
+    sentinel->data = nullptr;
     sentinel->rbColor = BLACK;
     
     sentinel->left = root;
@@ -206,7 +206,7 @@ rbNode<T>* RBT<T>::search(unsigned long long key)
  * @return void
  */
 template <class T>
-void RBT<T>::insert(unsigned long long key, T data)
+void RBT<T>::insert(unsigned long long key, T* data)
 {
     bool init = false;
     
@@ -851,7 +851,7 @@ void RBT<T>::pinsertFixup(rbNode<T>* &root, rbNode<T>* &ptr)
  * @return rbNode<T>*
  */
 template <class T>
-rbNode<T>* RBT<T>::instantiateNode(unsigned long long key, T data)
+rbNode<T>* RBT<T>::instantiateNode(unsigned long long key, T* data)
 {
     rbNode<T>* n = new rbNode<T>;
     n->key = key;
