@@ -44,6 +44,8 @@ template <class T>
 RBT<T>::~RBT()
 {
     deleteTree(root);
+    
+    delete sentinel;
 }
 
 /**
