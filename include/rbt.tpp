@@ -492,23 +492,30 @@ void RBT<T>::deleteTree(rbNode<T>* root)
 {
     if (root->left == sentinel && root->right == sentinel) // leaf node
     {
-        delete root; 
+        if (root != sentinel)
+            delete root; 
     }
     else if (root->left == sentinel) // left leaf branch
     {
         deleteTree(root->right);
-        delete root;
+
+        if (root != sentinel)
+            delete root;
     }
     else if (root->right == sentinel) // right leaf branch
     {
         deleteTree(root->left);
-        delete root;
+
+        if (root != sentinel)
+            delete root;
     }
     else // internal node with active branches
     {
         deleteTree(root->left);
         deleteTree(root->right);
-        delete root;
+
+        if (root != sentinel)
+            delete root;
     }
 }
 
